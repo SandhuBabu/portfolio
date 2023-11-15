@@ -1,0 +1,55 @@
+@import "keep-react/src/main.min.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --bgc: #212121;
+  --bgc: #000;
+  --tc: rgba(255, 255, 255, 0.87);
+  --p: #a956f7fe;
+ 
+  background-color: var(--bgc);
+  color: var(--tc);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-p {
+  background-color: var(--tc);
+  color: var(--bgc);
+}
+
+.btn-p.btn-out {
+  background-color: transparent;
+  color: var(--tc);
+  border: 1px solid var(--tc);
+}
+
+.btn-p.btn-out:hover {
+  border-color: var(--tc);
+  background-color: var(--tc);
+  color: var(--bgc);
+}
