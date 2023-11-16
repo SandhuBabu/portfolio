@@ -1,6 +1,7 @@
 import React from 'react'
 import { FromBottom } from '../../reveal/FromBottom'
 import { MAIN_COLOR, colors } from '../../utils'
+import Heading from './Heading'
 
 const frontend = [
     {
@@ -92,19 +93,19 @@ const Tech = () => {
     return (
         <section className='relative min-h-screen'>
             <FromBottom delay={0.5} duration={0.5}>
-                <h1 className={`text-center text-${colors.main} text-[2em] font-bold tracking-[1px] mb-5`}>Technologies I Use</h1>
+                <Heading text="Technologies I Use" size={'2em'} />
             </FromBottom>
             <div className='w-full md:flex flex-col md:flex-row justify-center md:items-start items-center gap-[2em] mt-[2em] px-[2em]'>
                 <FromBottom
                     duration={0.75}
                     delay={0.5}
-                    classNames='w-full md:w-[30em]  border-solid border-[1px] border-purple-300 p-4 rounded-md'>
-                    <h4 className={`text-center text-xl my-[1em] text-${colors.main}`}>FrontEnd</h4>
+                    classNames='w-full md:w-[30em]  border-solid border-[1px] border-[#fafa1f] p-4 rounded-md'>
+                    <h4 className={`text-center text-xl my-[1em] text-[#fafa1f]`}>FrontEnd</h4>
                     <div className='grid grid-cols-1 md:grid-cols-2'>
                         {
                             frontend.map((item, k) => (
                                 <a key={k} href={item.link} target="_blank">
-                                    <div className={`flex items-center gap-2 my-4 p-2 rounded hover:bg-purple-400`}>
+                                    <div className={`flex items-center gap-2 my-4 p-2 rounded hover:bg-[#fafa1f] hover:text-black`}>
                                         <img
                                             src={item.img}
                                             alt="react"
@@ -120,13 +121,13 @@ const Tech = () => {
                 <FromBottom
                     duration={0.85}
                     delay={0.75}
-                    classNames='w-full md:w-[30em]  border-solid border-[1px] border-purple-300 p-4 rounded-md mt-6 md:mt-0'>
-                    <h4 className={`text-center text-xl my-[1em] text-${colors.main}`}>Backend</h4>
+                    classNames='w-full md:w-[30em]  border-solid border-[1px] border-[#fafa1f] p-4 rounded-md mt-6 md:mt-0'>
+                    <h4 className={`text-center text-xl my-[1em] text-[#fafa1f]`}>Backend</h4>
                     <div className='grid grid-cols-1 md:grid-cols-2'>
                         {
                             backend.map((item, k) => (
                                 <a key={k} href={item.link} target="_blank">
-                                    <div className={`flex items-center gap-2 my-4 p-2 rounded hover:bg-[${colors.hoverMain}]`}>
+                                    <div className={`flex items-center gap-2 my-4 p-2 rounded hover:bg-[#fafa1f] hover:text-black`}>
                                         <img
                                             src={item.img}
                                             alt="react"

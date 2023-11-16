@@ -3,6 +3,7 @@ import Landing from './Landing'
 import Tech from './Tech'
 import { motion } from 'framer-motion'
 import Projects from './Projects'
+import './style.css'
 
 const HomePage = () => {
   return (

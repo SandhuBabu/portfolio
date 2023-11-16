@@ -1,63 +1,90 @@
 import React from 'react'
 import { FromBottom } from '../../reveal/FromBottom'
-import { colors } from '../../utils'
+import Heading from './Heading'
+import { Link } from 'react-router-dom'
+import ShoppingCart1 from '../../assets/shopping-cart-1.png'
+import ShoppingCart2 from '../../assets/shopping-cart-2.png'
 
 const mainProjects = [
     {
         title: 'Shoppng Cart UI',
+        img: ShoppingCart1.toString(),
+        tech: 'ReactJS, Redux, DaisyUI, Tailwind',
+        link: 'https://github.com/SandhuBabu/shopping-cart-frontend'
+    },
+    {
+        title: 'Shoppng Cart Backend',
+        img: ShoppingCart2.toString(),
+        tech: 'Java, Spring Boot',
+        link: ''
+    },
+    {
+        title: 'Twitter Clone',
+        img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnI0Fh4cV_CJU_Hj5aoI1ysrQxruQYDLU8Pw',
+        tech: 'ReactJS, Spring Boot, MUI',
+        link: 'https://github.com/SandhuBabu/twitter-clone'
+    },
+    {
+        title: 'Shoppng Cart UI',
         img: 'https://cdn.dribbble.com/userupload/11077538/file/original-5844534c68da9ece83fb323ce6d36d2e.png?resize=400x0',
-        tags: ['ReactJS', 'Redux', 'DaisyUI', 'TailwindCSS'],
+        tech: 'ReactJS, Spring Boot',
         link: ''
     },
     {
         title: 'Shoppng Cart UI',
         img: 'https://cdn.dribbble.com/userupload/11077538/file/original-5844534c68da9ece83fb323ce6d36d2e.png?resize=400x0',
-        tags: ['ReactJS', 'Redux', 'DaisyUI', 'TailwindCSS'],
+        tech: 'ReactJS, Spring Boot',
         link: ''
     },
     {
         title: 'Shoppng Cart UI',
         img: 'https://cdn.dribbble.com/userupload/11077538/file/original-5844534c68da9ece83fb323ce6d36d2e.png?resize=400x0',
-        tags: ['ReactJS', 'Redux', 'DaisyUI', 'TailwindCSS'],
+        tech: 'ReactJS, Spring Boot',
         link: ''
     },
     {
         title: 'Shoppng Cart UI',
         img: 'https://cdn.dribbble.com/userupload/11077538/file/original-5844534c68da9ece83fb323ce6d36d2e.png?resize=400x0',
-        tags: ['ReactJS', 'Redux', 'DaisyUI', 'TailwindCSS'],
+        tech: 'ReactJS, Spring Boot',
         link: ''
     },
 ]
 
 const Projects = () => {
     return (
-        <div>
+        <div className='md:mt-0 mt-[4em]'>
             <FromBottom delay={0.5} duration={0.5}>
-                <h1 className={`text-center text-${colors.main} text-[2em] font-bold tracking-[1px] mb-5`}>
-                    Projects I Have Completed
-                </h1>
+                <Heading
+                    text="Projects I Have Completed"
+                    size="2em"
+                    customClass='mb-6'
+                />
             </FromBottom>
-            <div
-                className='px-3 mb-16 md:grid'
-                style={{gridTemplateColumns: 'repeat( auto-fit, minmax(250px, 1fr))'}}
-            >
+            <div className='project-wrap'>
                 {
                     mainProjects.map((item, k) => (
-                        <FromBottom classNames={'mt-[3em] bg-[#242427] w-[20em] rounded-md overflow-hidden p-[1em]'}>
+                        <FromBottom
+                            key={k}
+                            delay={0.35}
+                            duration={0.75}
+                            classNames={'md:mt-[3em] flex gap-3 bg-[#242427] md:w-[22em] rounded-md overflow-hidden p-[1em]'}
+                        >
                             <img
                                 src={item?.img}
                                 alt={item?.title + ' image'}
-                                className='h-[10em] w-[100%] mb-3 object-cover rounded'
+                                className='h-[5em] w-[5em] mb-3  rounded'
                             />
-                            <h3 className='text-xl my-1 text-center'>{item?.title}</h3>
-                            <div className='flex gap-1'>
-                                {
-                                    item?.tags.map((tag, k) => (
-                                        <span key={k} className={`bg-${colors.main} rounded-xl px-2 text-xs`}>{tag}</span>
-                                    ))
-                                }
+                            <div >
+                                <Heading text={item?.title} customClass='text-start' />
+                                <p className='my-1 text-[13px]'>{item?.tech}</p>
+                                <Link
+                                    target='_blank'
+                                    to={item?.link}
+                                    className='bg-[#fafa1f] text-black px-3 py-1 text-[13px] rounded'
+                                >
+                                    Source Code
+                                </Link>
                             </div>
-                            <button className={`bg-${colors.main} px-4 py-2 rounded mt-4 float-right`}>Source Code</button>
                         </FromBottom>
                     ))
                 }
