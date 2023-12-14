@@ -1,0 +1,29 @@
+$bg: #000;
+$text: rgb(106, 239, 5);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+  user-select: none;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: $bg;
+  color: $text;
+  padding: 2em;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+.box {
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  background: $text;
+}
