@@ -1,7 +1,7 @@
 $green: rgb(106, 239, 5);
 
 .navbar {
-    position: absolute;
+    position: fixed;
     left: 0;
     bottom: 2em;
     width: 100%;    
@@ -11,6 +11,7 @@ $green: rgb(106, 239, 5);
         width: max-content;
         margin: 0 auto;
         background-color: rgba(8, 221, 8, 0.211);
+        background-color: rgba(19, 20, 19, 0.562);
         padding: 0.5em 2em;
         border-radius: 3em;
         display: flex;
